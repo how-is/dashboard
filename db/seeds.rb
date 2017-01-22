@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Report.create(repo: "rubygems/rubygems", json: {})
+Report.create(repo: "rubygems/rubygems.org", json: {})
+Report.create(repo: "bundler/bundler", json: {})
+Report.create(repo: "bundler/gemstash", json: {})

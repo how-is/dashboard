@@ -1,0 +1,7 @@
+<h1>how is <%= @repo %>?</h1>
+
+<ul>
+  <%- @reports.each do |report| -%>
+  <li><%= link_to report.created_at.to_date.iso8601, repo_report_path(@repo, report) %></li>
+  <%- end -%>
+</ul>
