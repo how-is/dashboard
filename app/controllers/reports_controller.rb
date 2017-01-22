@@ -5,6 +5,8 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.find(params[:id])
+    @repo = params[:repo_id]
+    @date = params[:date]
+    @report = Report.repo(@repo).on_date(@date).first
   end
 end
