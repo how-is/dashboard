@@ -9,6 +9,7 @@ end
 gem 'rails', '5.0.1'
 
 gem 'jquery-rails'
+gem 'how_is', github: 'how-is/how_is', branch: :master
 gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -17,6 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'pry', '~> 0.11.pre2'
   gem 'pry-byebug', platform: :mri
   gem 'pry-rails'
   gem 'rspec-rails'
