@@ -8,6 +8,7 @@ end
 gem 'rails', '5.0.1'
 
 gem 'jquery-rails'
+gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
