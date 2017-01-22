@@ -1,0 +1,2 @@
+#!/bin/sh
+HEROKU_APP=how-is-dashboard HKAPP=how-is-dashboard exec "${HEROKU_COMMAND:-heroku}" "$@"
