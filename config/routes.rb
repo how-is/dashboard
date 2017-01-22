@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root to: "repos#index"
 
-  resources :repos, only: [:index, :show], id: /[^\/]+\/[^\/]+/ do
-    resources :reports, only: [:index, :show], id: /\d\d\d\d-\d\d-\d\d/
+  scope '/*repo_id', repo_id: /[^\/]+\/[^\/]+/ do
+    get '/' => 'reports#index', as: :repo
+    get '/:date' => 'reports#show', as: :repo_date, date: /\d\d\d\d-\d\d-\d\d/
   end
 end

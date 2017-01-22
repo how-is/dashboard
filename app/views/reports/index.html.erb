@@ -2,6 +2,6 @@
 
 <ul>
   <%- @reports.each do |report| -%>
-  <li><%= link_to report.created_at.to_date.iso8601, repo_report_path(@repo, report) %></li>
+  <li><%= link_to report.created_at.to_date.iso8601, repo_date_path(@repo, report) %></li>
   <%- end -%>
 </ul>
