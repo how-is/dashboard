@@ -16,7 +16,10 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry-byebug', platform: :mri
+  gem 'pry-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
