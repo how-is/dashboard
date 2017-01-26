@@ -1,5 +1,5 @@
 class ReposController < ApplicationController
   def index
-    @repos = Report.pluck(:repo).sort
+    @repos = ENV['REPOSITORIES'].split(',').sort
   end
 end
