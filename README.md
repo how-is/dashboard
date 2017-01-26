@@ -45,6 +45,14 @@ $ bundle config local.how_is /path/to/how_is
 
 ???
 
+### Bash on Windows
+
+If you're using Bash on Windows, file watching doesn't work, so be sure to
+add the following to `.env.local`:
+
+```
+DISABLE_LISTEN=true
+```
 
 ## Deployment
 
