@@ -2,6 +2,6 @@
 
 <ul>
   <%- @repos.each do |repo| -%>
-  <li><%= link_to repo, reports_path(repo) %></li>
+  <li><%= link_to repo, repo_path(repo) %></li>
   <%- end -%>
 </ul>
