@@ -4,8 +4,8 @@ class Report < ApplicationRecord
   scope :repo, -> (name) { where(repo: name) }
   scope :on_date, -> (date) {
     where("created_at >= ? AND created_at <= ?",
-      Date.today.beginning_of_day,
-      Date.today.end_of_day)
+      Date.parse(date).beginning_of_day,
+      Date.parse(date).end_of_day)
   }
 
   def to_param
