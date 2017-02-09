@@ -8,7 +8,6 @@ class ReportsController < ApplicationController
     @repo = params[:repo_id]
     @date = params[:date]
     @report = Report.repo(@repo).on_date(@date).first
-    @html = HowIs.generate_report(repository: @repo,
-                                  from: ???)
+    @html = HowIs.from_json(@report.json).to_html
   end
 end
