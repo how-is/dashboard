@@ -9,5 +9,6 @@ task :generate_reports => [:environment] do
   ENV['REPOSITORIES'].split(',').each do |repo|
     report = HowIs.generate_report(repository: repo, format: :json)
     Report.create(repo: repo, json: report)
+    sleep 10 * 60 # Wait 10 minutes between repository.
   end
 end
