@@ -1,5 +1,5 @@
 class ReposController < ApplicationController
   def index
-    @repos = ENV.fetch('REPOSITORIES', 'rubygems/rubygems,bundler/bundler').split(',').sort
+    @repos = Repo.names
   end
 end
