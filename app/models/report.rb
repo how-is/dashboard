@@ -1,5 +1,5 @@
 class Report < ApplicationRecord
-  serialize :json, JSON
+  serialize :data, JSON
 
   scope :repo, -> (name) { where(repo: name) }
   scope :on_date, -> (date) {
@@ -8,8 +8,12 @@ class Report < ApplicationRecord
       Date.parse(date).end_of_day)
   }
 
-  def data
-    json.to_h
+  def json=(string)
+    self.data = JSON.parse(string)
+  end
+
+  def json
+    JSON.dump(data)
   end
 
   def to_param

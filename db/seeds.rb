@@ -10,5 +10,14 @@ def read_seed(name)
   JSON.parse(File.read(seed_path))
 end
 
-Report.create(repo: "rubygems/rubygems", created_at: Time.parse("2017-02-24T11:53:37-08:00"), json: read_seed("bundler-2017-02-24"))
-Report.create(repo: "bundler/bundler", created_at: Time.parse("2017-02-24T11:53:37-08:00"), json: read_seed("rubygems-2017-02-24"))
+Report.create(
+  repo: "rubygems/rubygems",
+  created_at: Time.parse("2017-02-24T11:53:37-08:00"),
+  data: read_seed("bundler-2017-02-24")
+)
+
+Report.create(
+  repo: "bundler/bundler",
+  created_at: Time.parse("2017-02-24T11:53:37-08:00"),
+  data: read_seed("rubygems-2017-02-24")
+)
