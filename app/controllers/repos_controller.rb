@@ -1,5 +1,5 @@
 class ReposController < ApplicationController
   def index
-    @repos = ENV['REPOSITORIES'].split(',').sort
+    @repos = Repo.names
   end
 end

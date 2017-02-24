@@ -5,9 +5,20 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 
-task :generate_reports => [:environment] do
-  ENV['REPOSITORIES'].split(',').each do |repo|
-    report = HowIs.generate_report(repository: repo, format: :json)
-    Report.create(repo: repo, json: report)
+namespace :reports do
+  desc "Generate reports for all repos immediately"
+  task :generate => [:environment] do
+    Repo.names.each do |repo|
+      GenerateReportWorker.perform(repo)
+    end
+  end
+
+  desc "Generate reports for all repos in the background, one per 5 minutes"
+  task :queue => [:environment] do
+    wait_min = 0
+    Repo.names.each do |repo|
+      GenerateReportWorker.perform_in(wait_min.minutes, repo)
+      wait_min += 5
+    end
   end
 end

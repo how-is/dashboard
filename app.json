@@ -1,6 +1,7 @@
 {
   "name": "dashboard",
   "scripts": {
+    "postdeploy": "bundle exec rake db:schema:load db:seed"
   },
   "env": {
     "LANG": {
@@ -18,14 +19,20 @@
     "RAILS_SERVE_STATIC_FILES": {
       "required": true
     },
+    "REPOSITORIES": {
+      "required": true
+    },
     "SECRET_KEY_BASE": {
       "generator": "secret"
     }
   },
   "formation": {
+    "web": {"quantity": 1},
+    "worker": {"quantity": 1}
   },
   "addons": [
-    "heroku-postgresql"
+    "heroku-postgresql",
+    "heroku-redis"
   ],
   "buildpacks": [
     {
