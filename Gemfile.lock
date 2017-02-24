@@ -1,12 +1,11 @@
 GIT
   remote: https://github.com/how-is/how_is.git
-  revision: 8861af6dbc6cb1cb36d22ab3af1c0a3ee600eafd
+  revision: 9278dd2286037b114c7fd7432ffe7be48931164c
   branch: master
   specs:
     how_is (17.0.0)
       contracts (~> 0.14.0)
       github_api (~> 0.14.5)
-      rack (~> 2.0)
       slop (~> 4.4.1)
       tessellator-fetcher (~> 5.0.0)
 
@@ -237,4 +236,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.14.3
+   1.14.5

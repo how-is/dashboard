@@ -8,6 +8,10 @@ class Report < ApplicationRecord
       Date.parse(date).end_of_day)
   }
 
+  def data
+    json.to_h
+  end
+
   def to_param
     created_at.to_date.iso8601
   end

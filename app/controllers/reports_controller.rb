@@ -8,6 +8,6 @@ class ReportsController < ApplicationController
     @repo = params[:repo_id]
     @date = params[:date]
     @report = Report.repo(@repo).on_date(@date).first
-    @html = HowIs.from_json(@report.json).to_html
+    @html = HowIs.from_hash(@report.data).to_html
   end
 end
